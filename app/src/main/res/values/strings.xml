@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">USSD Tanzania</string>
+    <string name="tigo">Tigo</string>
+    <string name="vodacom">Vodacom</string>
+    <string name="airtel">Airtel</string>
+    <string name="halotel">Halotel</string>
+    <string name="ttcl">TTCL</string>
+    <string name="zantel">Zantel</string>
+    <string name="tigo_check_balance">Check Balance</string>
+    <string name="check_balance">CHECK BALANCE</string>
+    <string name="tigo_pesa">TIGO PESA</string>
+    <string name="m_pesa">M PESA</string>
+    <string name="airtel_money">AIRTEL MONEY</string>
+    <string name="uni">UNI</string>
+    <string name="tigoBundle1">*147*00#</string>
+    <string name="tigoBundles2">*148*00#</string>
+    <string name="tigoBundle3">*148*01#</string>
+    <string name="vodabundles1">*149*01#</string>
+    <string name="vodaBundles2">*149*03#</string>
+    <string name="airtelBundles1">*148*88#</string>
+    <string name="halopesa">HALOPESA</string>
+    <string name="t_pesa">T PESA</string>
+    <string name="recharge">RECHARGE</string>
+    <string name="enter_your_voucher_pin">Enter your Voucher PIN</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_ad">AdActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <!-- -
+        This is an ad unit ID for a banner test ad. Replace with your own banner ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+
+    <string name="adMobAppId">ca-app-pub-8241388126213878~5889758411</string>
+    <string name="airtel_money_logo">Airtel Money logo</string>
+    <string name="halotel_logo">Halotel Logo</string>
+    <string name="tigo_logo">Tigo Logo</string>
+    <string name="t_pesa_logo">T Pesa logo</string>
+    <string name="ttcl_bundle_2">*148*30#</string>
+    <string name="carrier_selection">Carrier Selection</string>
+    <string name="bundle">BUNDLE</string>
+    <string name="bundle_1">BUNDLE 1</string>
+    <string name="bundle_2">BUNDLE 2</string>
+    <string name="bundle_3">BUNDLE 3</string>
+    <string name="ezypesa">EZYPESA</string>
+    <string name="title_activity_add_mob">AddMob</string>
+
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+
+
+</resources>
