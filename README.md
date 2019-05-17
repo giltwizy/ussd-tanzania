@@ -1,6 +1,6 @@
 # ussd-tanzania
 
-An Android helps you to access the USSD Mobile Codes for Mobile operators in Tanzania. It can work offline so you can access all USSD codes even if you are not connected to the internet. 
+An Android App that helps you to access the USSD Mobile Codes for Mobile operators in Tanzania. It can work offline so you can access all USSD codes even if you are not connected to the internet. 
 
 You can get all types of USSD Mobile codes for all opearators like Balance, Data balance, Special Offers etc.
 
