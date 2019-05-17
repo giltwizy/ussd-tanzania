@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tigo_logo">Tigo Logo</string>
+    <string name="t_pesa_logo">T Pesa logo</string>
+    <string name="ttcl_bundle_2">*148*30#</string>
+    <string name="zantel">Zantel</string>
+    <string name="carrier_selection">Carrier Selection</string>
+    <string name="bundle">BUNDLE</string>
+    <string name="bundle_1">BUNDLE 1</string>
+    <string name="bundle_2">BUNDLE 2</string>
+    <string name="bundle_3">BUNDLE 3</string>
+    <string name="ezypesa">EZYPESA</string>
+</resources>

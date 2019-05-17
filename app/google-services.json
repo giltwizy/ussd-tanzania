@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "212114041509",
+    "firebase_url": "https://ussd-tanzania.firebaseio.com",
+    "project_id": "ussd-tanzania",
+    "storage_bucket": "ussd-tanzania.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212114041509:android:03719012f93c2b65",
+        "android_client_info": {
+          "package_name": "com.trojan.tony.ussdassistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212114041509-qdrk154bnv8qrablkhlkfudv9dv9bbh4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trojan.tony.ussdassistant",
+            "certificate_hash": "5be692a8694beb97a99f12402ac3d7450615bcc7"
+          }
+        },
+        {
+          "client_id": "212114041509-jiktdrrf4ksteirjp6qksvjo7grsjnc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcQE34uHGcy100SnmlK1E6yqfBaq1s99c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212114041509-jiktdrrf4ksteirjp6qksvjo7grsjnc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-8241388126213878~5889758411"
+    }
+  ],
+  "configuration_version": "1"
+}

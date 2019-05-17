@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App Theme Colors -->
+    <!--    <color name="colorPrimary">#3F51B5</color>  -->
+    <color name="colorPrimary">#9ccc65</color>
+    <color name="colorPrimaryDark">#487412</color>
+    <!--<color name="colorPrimaryDark">#6b9b37</color>-->
+    <!-- <color name="colorPrimaryDark">#FF3D9741</color>   -->
+    <!--    <color name="colorPrimaryDark">#000000</color>  -->
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Basic Colors -->
+    <color name="white">#FFFFFF</color>
+
+    <!-- Cellular Network Colors -->
+
+    <!-- Extra Colors -->
+    <color name="greyBackground1">#ececec </color>
+    <color name="material_green">#FF66BB6A</color>
+    <color name="material_deep_purple">#673Ab7 </color>
+    <color name="material_blue">#2196F3</color>
+    <color name="background_color">#fcfcfc</color>
+
+
+</resources>
