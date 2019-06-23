@@ -16,15 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".AddMob"
-            android:label="@string/title_activity_add_mob"></activity>
+
         <!-- Include the AdActivity configChanges and theme. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
-        <activity android:name=".Zantel" /> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <activity android:name=".networkCarriers.Zantel" />
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8241388126213878~5889758411" />
@@ -38,11 +37,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Airtel" />
-        <activity android:name=".Voda" />
-        <activity android:name=".Halotel" />
-        <activity android:name=".TTCL" />
-        <activity android:name=".Tigo" />
+        <activity android:name=".networkCarriers.Airtel" />
+        <activity android:name=".networkCarriers.Voda" />
+        <activity android:name=".networkCarriers.Halotel" />
+        <activity android:name=".networkCarriers.TTCL" />
+        <activity android:name=".networkCarriers.Tigo" />
         <activity android:name=".Recharge" />
     </application>
 

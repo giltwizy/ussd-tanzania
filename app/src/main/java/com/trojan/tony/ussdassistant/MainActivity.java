@@ -24,23 +24,62 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.trojan.tony.ussdassistant.networkCarriers.Airtel;
+import com.trojan.tony.ussdassistant.networkCarriers.Halotel;
+import com.trojan.tony.ussdassistant.networkCarriers.TTCL;
+import com.trojan.tony.ussdassistant.networkCarriers.Tigo;
+import com.trojan.tony.ussdassistant.networkCarriers.Voda;
+import com.trojan.tony.ussdassistant.networkCarriers.Zantel;
+
+import static com.trojan.tony.ussdassistant.Constants.airtelMoneyMenu;
+import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
+import static com.trojan.tony.ussdassistant.Constants.haloPesaMenu;
+import static com.trojan.tony.ussdassistant.Constants.mPesaMenu;
+import static com.trojan.tony.ussdassistant.Constants.rail;
+import static com.trojan.tony.ussdassistant.Constants.tigoPesaMenu;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    //ads init
+    private View view;
+    private AdView mAdView;
+
+
     //Initialization of the PermissionRequest code
     private final int CALL_PERMISSION_CODE = 1;
 
     //Firebase analytics
    // private FirebaseAnalytics mFirebaseAnalytics;
 
-    private final String ussd = Uri.encode("#");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Obtain the FirebaseAnalytics instance.
-        //mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+       //Admob
+        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+
+        //   --- Admob ---
+        view=getWindow().getDecorView().getRootView();
+
+        Admob.createLoadBanner(getApplicationContext(), view);
+        Admob.createLoadInterstitial(getApplicationContext(),null);
+        //   --- *** ---
+
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+
+
 
         //Check if calling permission is granted if not permission is requested
         if (ContextCompat.checkSelfPermission(this,
@@ -49,12 +88,12 @@ public class MainActivity extends AppCompatActivity
         }
 
         //initialization of USSD Buttons
-        CardView recharge = (CardView) findViewById(R.id.rechargeCardViewId);
-        CardView balance = (CardView) findViewById(R.id.generalCheckBalanceCardView);
-        CardView tigoPesa = (CardView) findViewById(R.id.generalTigoPesaCardView);
-        CardView mPesa = (CardView) findViewById(R.id.generalMpesaCardView);
-        CardView airtelMoney = (CardView) findViewById(R.id.generalAirtelMoneyCardView);
-        CardView haloPesa = (CardView) findViewById(R.id.generalHaloPesaCardView);
+        CardView recharge = findViewById(R.id.rechargeCardViewId);
+        CardView balance = findViewById(R.id.generalCheckBalanceCardView);
+        CardView tigoPesa = findViewById(R.id.generalTigoPesaCardView);
+        CardView mPesa = findViewById(R.id.generalMpesaCardView);
+        CardView airtelMoney = findViewById(R.id.generalAirtelMoneyCardView);
+        CardView haloPesa = findViewById(R.id.generalHaloPesaCardView);
 
         recharge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +108,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse("tel:*102"+ussd));
+                dialerIntent.setData(Uri.parse(balanceMenu+rail));
                 startActivity(dialerIntent);
             }
         });
@@ -78,7 +117,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse("tel:*150*01" + ussd));
+                dialerIntent.setData(Uri.parse(tigoPesaMenu + rail));
                 startActivity(dialerIntent);
             }
         });
@@ -87,7 +126,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse("tel:*150*00"+ussd));
+                dialerIntent.setData(Uri.parse(mPesaMenu+rail));
                 startActivity(dialerIntent);
             }
         });
@@ -96,7 +135,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse("tel:*150*60"+ussd));
+                dialerIntent.setData(Uri.parse(airtelMoneyMenu+rail));
                 startActivity(dialerIntent);
             }
         });
@@ -105,7 +144,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse("tel:*150*88"+ussd));
+                dialerIntent.setData(Uri.parse(haloPesaMenu+rail));
                 startActivity(dialerIntent);
             }
         });
@@ -136,19 +175,18 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            openAdmobActivity();
             super.onBackPressed();
         }
     }
 
-    private void openAdmobActivity() {
-        Intent addMob = new Intent(MainActivity.this, AddMob.class);
-        startActivity(addMob);
-    }
+//    private void openAdmobActivity() {
+//        Intent addMob = new Intent(MainActivity.this, AddMob.class);
+//        startActivity(addMob);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -199,37 +237,37 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void openVodaActivity() {
-        Intent vodaIntent = new Intent(this,Voda.class);
+        Intent vodaIntent = new Intent(this, Voda.class);
         startActivity(vodaIntent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     private void openTigoActivity() {
-        Intent tigoIntent = new Intent(this,Tigo.class);
+        Intent tigoIntent = new Intent(this, Tigo.class);
         startActivity(tigoIntent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     private void openAirtelActivity() {
-        Intent airtelIntent = new Intent(this,Airtel.class);
+        Intent airtelIntent = new Intent(this, Airtel.class);
         startActivity(airtelIntent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     private void openHalotelActivity() {
-        Intent halotelIntent = new Intent(this,Halotel.class);
+        Intent halotelIntent = new Intent(this, Halotel.class);
         startActivity(halotelIntent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     private void openTtclActivity() {
-        Intent ttclIntent = new Intent(this,TTCL.class);
+        Intent ttclIntent = new Intent(this, TTCL.class);
         startActivity(ttclIntent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     private void openZantelActivity() {
-        Intent zantelIntent = new Intent(this,Zantel.class);
+        Intent zantelIntent = new Intent(this, Zantel.class);
         startActivity(zantelIntent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }

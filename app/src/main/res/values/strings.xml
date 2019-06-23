@@ -33,7 +33,7 @@
         For more information, see https://support.google.com/admob/answer/3052638
     <!- -->
 
-    <string name="adMobAppId">ca-app-pub-8241388126213878~5889758411</string>
+    <string name="admob_showIntersitial_ad_unit_id">ca-app-pub-8241388126213878~5889758411</string>
     <string name="airtel_money_logo">Airtel Money logo</string>
     <string name="halotel_logo">Halotel Logo</string>
     <string name="tigo_logo">Tigo Logo</string>

@@ -1,44 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:background="@color/background_color"
-android:orientation="vertical"
-android:padding="10dp"
-tools:context=".Airtel">
-
-    <!--
-
-
-
-<android.support.v7.widget.CardView
-    android:id="@+id/introPhoto"
-    android:layout_width="wrap_content"
-    android:padding="10dp"
-    android:layout_gravity="center"
-    android:layout_height="60dp"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="30dp"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_color"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".networkCarriers.Airtel">
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_showIntersitial_ad_unit_id"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent">
 
-
-
-    <ImageView
-        android:layout_width="191dp"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/airtel_money_logo"
-        android:src="@drawable/airtelmoney_logo" />
-
-
-
-
-</android.support.v7.widget.CardView>
-
--->
+    </com.google.android.gms.ads.AdView>
 
 
 <LinearLayout
