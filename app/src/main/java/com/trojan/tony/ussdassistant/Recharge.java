@@ -44,10 +44,13 @@ public class Recharge extends AppCompatActivity {
         String pin_no = pin.getText().toString();
 
         if(TextUtils.isEmpty(pin_no)) {
-            Toast.makeText(this, "Please type your Voucher PIN", Toast.LENGTH_SHORT).show();
+            pin.setError("Please type your voucher pin");
+            pin.requestFocus();
         }
-        else if (pin_no.length() < 12)
-            Toast.makeText(this, "Your Voucher PIN cannot have less than 12 digits", Toast.LENGTH_SHORT).show();
+        else if (pin_no.length() < 12) {
+            pin.setError("Your voucher pin cannot have less than 12 digits");
+            pin.requestFocus();
+        }
 
         else {
             Intent dialerIntent = new Intent(Intent.ACTION_CALL);
