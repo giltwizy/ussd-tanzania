@@ -56,6 +56,12 @@
         For more information, see https://support.google.com/admob/answer/3052638
     <!- -->
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="check_balance_menu">Check balance menu</string>
+    <string name="recharge_menu">Recharge menu</string>
+    <string name="tigo_pesa_menu">Tigo Pesa menu</string>
+    <string name="m_pesa_menu">M pesa menu</string>
+    <string name="airtel_money_menu">Airtel money menu</string>
+    <string name="halo_pesa_menu">Halo pesa menu</string>
 
 
 </resources>

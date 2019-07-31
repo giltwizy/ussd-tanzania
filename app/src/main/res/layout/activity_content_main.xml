@@ -25,6 +25,7 @@
     </com.google.android.gms.ads.AdView>
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -52,7 +53,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundblue"
                     android:padding="10dp"
-                    android:src="@drawable/ic_star_black_16dp" />
+                    android:src="@drawable/ic_star_black_16dp"
+                    android:contentDescription="@string/check_balance_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -90,7 +92,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundblue"
                     android:padding="10dp"
-                    android:src="@drawable/ic_flare_black_16dp" />
+                    android:src="@drawable/ic_flare_black_16dp"
+                    android:contentDescription="@string/recharge_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -139,7 +142,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:contentDescription="@string/tigo_pesa_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -177,7 +181,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:contentDescription="@string/m_pesa_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -226,7 +231,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:contentDescription="@string/airtel_money_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -264,7 +270,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:contentDescription="@string/halo_pesa_menu" />
 
                 <View
                     android:layout_width="match_parent"
