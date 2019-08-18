@@ -163,7 +163,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/generalMpesaCardView"
+            android:id="@+id/generalNIDACardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -179,9 +179,8 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:src="@drawable/tanzania_flag"
                     android:contentDescription="@string/m_pesa_menu" />
 
                 <View
@@ -195,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/m_pesa"
+                    android:text="@string/nida"
                     android:textStyle="bold" />
             </LinearLayout>
 
