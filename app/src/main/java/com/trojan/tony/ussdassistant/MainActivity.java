@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.trojan.tony.ussdassistant.networkCarriers.Airtel;
 import com.trojan.tony.ussdassistant.networkCarriers.Halotel;
@@ -48,6 +49,10 @@ public class MainActivity extends AppCompatActivity
     //ads init
     private View view;
     private AdView mAdView;
+    // [START_EXCLUDE]
+    private InterstitialAd mInterstitialAd;
+
+    // [END_EXCLUDE]
 
 
     //Initialization of the PermissionRequest code
@@ -61,6 +66,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
        //Admob
         // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
@@ -77,6 +84,13 @@ public class MainActivity extends AppCompatActivity
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+        // [END instantiate_interstitial_ad]
+
+
 
 
 
