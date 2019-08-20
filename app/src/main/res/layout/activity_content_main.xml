@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background_color"
+    android:background="@drawable/back_overlay"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".MainActivity">
@@ -23,6 +23,7 @@
         ads:layout_constraintStart_toStartOf="parent">
 
     </com.google.android.gms.ads.AdView>
+
 
 
     <LinearLayout
@@ -52,7 +53,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundblue"
                     android:padding="10dp"
-                    android:src="@drawable/ic_star_black_16dp" />
+                    android:src="@drawable/ic_star_black_16dp"
+                    android:contentDescription="@string/check_balance_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -90,7 +92,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundblue"
                     android:padding="10dp"
-                    android:src="@drawable/ic_flare_black_16dp" />
+                    android:src="@drawable/ic_flare_black_16dp"
+                    android:contentDescription="@string/recharge_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -139,7 +142,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:contentDescription="@string/tigo_pesa_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -159,7 +163,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/generalMpesaCardView"
+            android:id="@+id/generalSerikaliCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -175,9 +179,9 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/tanzania_emblem"
+                    android:contentDescription="@string/m_pesa_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -190,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/m_pesa"
+                    android:text="@string/malipo_ya_serikali"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -226,7 +230,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:contentDescription="@string/airtel_money_menu" />
 
                 <View
                     android:layout_width="match_parent"
@@ -264,7 +269,8 @@
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
-                    android:src="@drawable/ic_monetization_on_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp"
+                    android:contentDescription="@string/halo_pesa_menu" />
 
                 <View
                     android:layout_width="match_parent"

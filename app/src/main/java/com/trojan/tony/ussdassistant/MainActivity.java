@@ -37,8 +37,9 @@ import com.trojan.tony.ussdassistant.networkCarriers.Zantel;
 import static com.trojan.tony.ussdassistant.Constants.airtelMoneyMenu;
 import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
 import static com.trojan.tony.ussdassistant.Constants.haloPesaMenu;
-import static com.trojan.tony.ussdassistant.Constants.mPesaMenu;
+
 import static com.trojan.tony.ussdassistant.Constants.rail;
+import static com.trojan.tony.ussdassistant.Constants.serikaliMenu;
 import static com.trojan.tony.ussdassistant.Constants.tigoPesaMenu;
 
 public class MainActivity extends AppCompatActivity
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity
         CardView recharge = findViewById(R.id.rechargeCardViewId);
         CardView balance = findViewById(R.id.generalCheckBalanceCardView);
         CardView tigoPesa = findViewById(R.id.generalTigoPesaCardView);
-        CardView mPesa = findViewById(R.id.generalMpesaCardView);
+        CardView serikali = findViewById(R.id.generalSerikaliCardView);
         CardView airtelMoney = findViewById(R.id.generalAirtelMoneyCardView);
         CardView haloPesa = findViewById(R.id.generalHaloPesaCardView);
 
@@ -122,11 +123,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        mPesa.setOnClickListener(new View.OnClickListener() {
+        serikali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(mPesaMenu+rail));
+                dialerIntent.setData(Uri.parse(serikaliMenu+rail));
                 startActivity(dialerIntent);
             }
         });

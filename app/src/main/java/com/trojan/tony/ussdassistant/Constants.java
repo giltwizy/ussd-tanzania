@@ -10,6 +10,7 @@ public class Constants {
 
     //Global Menu
     public static final String balanceMenu = "tel:*102";
+    public static final String serikaliMenu = "tel:*152*00";
 
     //Airtel
     public static final String airtelMoneyMenu ="tel:*150*60";
