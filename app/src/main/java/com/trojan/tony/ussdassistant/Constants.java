@@ -25,6 +25,7 @@ public class Constants {
     public static final String tigoBundle3Menu = "tel:*148*01";
 
     //Voda
+    public static final String salioLaKifurushi = "tel:*149*60";
     public static final String mPesaMenu = "tel:*150*00";
     public static final String vodaBundle1Menu = "tel:*149*01";
     public static final String vodaBundle2Menu = "tel:*149*03";

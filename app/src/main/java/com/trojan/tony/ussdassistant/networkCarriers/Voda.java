@@ -12,9 +12,10 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.trojan.tony.ussdassistant.Admob;
+import com.trojan.tony.ussdassistant.Constants;
 import com.trojan.tony.ussdassistant.R;
 
-import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
+import static com.trojan.tony.ussdassistant.Constants.salioLaKifurushi;
 import static com.trojan.tony.ussdassistant.Constants.mPesaMenu;
 import static com.trojan.tony.ussdassistant.Constants.rail;
 import static com.trojan.tony.ussdassistant.Constants.vodaBundle1Menu;
@@ -36,7 +37,7 @@ public class Voda extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        CardView balance = findViewById(R.id.vodaCheckBalanceCardViewId);
+        CardView balanceBundle = findViewById(R.id.vodaBalanceBundleCardViewId);
         CardView mpesa = findViewById(R.id.mPesaCardViewId);
         CardView uni = findViewById(R.id.vodaBundle1CardViewId);
         CardView bundle1 = findViewById(R.id.vodaBundle2CardViewId);
@@ -52,11 +53,11 @@ public class Voda extends AppCompatActivity {
             }
         });
 
-        balance.setOnClickListener(new View.OnClickListener() {
+        balanceBundle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(balanceMenu + rail));
+                dialerIntent.setData(Uri.parse(salioLaKifurushi + rail));
                 startActivity(dialerIntent);
             }
         });
