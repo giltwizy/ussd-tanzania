@@ -7,7 +7,7 @@
     <string name="ttcl">TTCL</string>
     <string name="zantel">Zantel</string>
     <string name="tigo_check_balance">Check Balance</string>
-    <string name="check_balance">CHECK BALANCE</string>
+    <string name="check_balance">SALIO</string>
     <string name="tigo_pesa">TIGO PESA</string>
     <string name="m_pesa">M PESA</string>
     <string name="airtel_money">AIRTEL MONEY</string>
@@ -20,8 +20,8 @@
     <string name="airtelBundles1">*148*88#</string>
     <string name="halopesa">HALOPESA</string>
     <string name="t_pesa">T PESA</string>
-    <string name="recharge">RECHARGE</string>
-    <string name="enter_your_voucher_pin">Enter your Voucher PIN</string>
+    <string name="recharge">ONGEZA SALIO</string>
+    <string name="enter_your_voucher_pin">INGIZA VOCHA</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
     <string name="action_settings">Settings</string>
@@ -40,7 +40,7 @@
     <string name="tigo_logo">Tigo Logo</string>
     <string name="t_pesa_logo">T Pesa logo</string>
     <string name="ttcl_bundle_2">*148*30#</string>
-    <string name="carrier_selection">Carrier Selection</string>
+    <string name="carrier_selection">Chagua Mtandao</string>
     <string name="bundle">BUNDLE</string>
     <string name="bundle_1">BUNDLE 1</string>
     <string name="bundle_2">BUNDLE 2</string>
