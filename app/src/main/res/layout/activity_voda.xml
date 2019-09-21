@@ -67,8 +67,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Salio la Kifurushi"
+                    android:text="@string/salio_la_kifurushi"
                     android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
