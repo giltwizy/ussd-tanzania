@@ -35,7 +35,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/zantelCheckBalanceCardViewId"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -72,9 +72,9 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/tPesaCardViewId"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -111,7 +111,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
@@ -124,7 +124,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/ttclBundle1CardViewId"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -161,9 +161,9 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/ttclBundle2CardViewId"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -200,7 +200,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>

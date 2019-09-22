@@ -2,9 +2,11 @@ package com.trojan.tony.ussdassistant.networkCarriers;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+
+import androidx.cardview.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -12,7 +14,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.trojan.tony.ussdassistant.Admob;
-import com.trojan.tony.ussdassistant.Constants;
 import com.trojan.tony.ussdassistant.R;
 
 import static com.trojan.tony.ussdassistant.Constants.salioLaKifurushi;

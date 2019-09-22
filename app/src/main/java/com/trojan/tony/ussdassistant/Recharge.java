@@ -2,14 +2,14 @@ package com.trojan.tony.ussdassistant;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class Recharge extends AppCompatActivity {
     private EditText pin;
@@ -24,8 +24,8 @@ public class Recharge extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        Button recharge = (Button) findViewById(R.id.rechargeBtn);
-        pin = (EditText)findViewById(R.id.pinEt);
+        Button recharge = findViewById(R.id.rechargeBtn);
+        pin = findViewById(R.id.pinEt);
 
         recharge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,11 +44,11 @@ public class Recharge extends AppCompatActivity {
         String pin_no = pin.getText().toString();
 
         if(TextUtils.isEmpty(pin_no)) {
-            pin.setError("Please type your voucher pin");
+            pin.setError("Tafadhali andika tarakimu za vocha");
             pin.requestFocus();
         }
         else if (pin_no.length() < 12) {
-            pin.setError("Your voucher pin cannot have less than 12 digits");
+            pin.setError("Samahani! Tarakimu za vocha yako ni pungufu");
             pin.requestFocus();
         }
 
