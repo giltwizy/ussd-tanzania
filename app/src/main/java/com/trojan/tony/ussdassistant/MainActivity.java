@@ -11,6 +11,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.core.app.ActivityCompat;
@@ -49,14 +51,7 @@ import static com.trojan.tony.ussdassistant.Constants.tigoPesaMenu;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    //ads init
-    private View view;
     private AdView mAdView;
-    // [START_EXCLUDE]
-    private InterstitialAd mInterstitialAd;
-
-    // [END_EXCLUDE]
-
 
     //Initialization of the PermissionRequest code
     private final int CALL_PERMISSION_CODE = 1;
@@ -70,33 +65,23 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-       //Admob
-        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
-
-        //   --- Admob ---
-        view=getWindow().getDecorView().getRootView();
-
-        Admob.createLoadBanner(getApplicationContext(), view);
-        Admob.createLoadInterstitial(getApplicationContext(),null);
-        //   --- *** ---
-
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
 
         mAdView = findViewById(R.id.adView);
+
         AdRequest adRequest = new AdRequest.Builder().build();
+//                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+//                .build();
+
+        // Start loading the ad in the background.
         mAdView.loadAd(adRequest);
 
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-        // [END instantiate_interstitial_ad]
-
-
-
-
-
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
 
         //Check if calling permission is granted if not permission is requested
@@ -104,6 +89,7 @@ public class MainActivity extends AppCompatActivity
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             requestCallPermission();
         }
+
 
         //initialization of USSD Buttons
         CardView recharge = findViewById(R.id.rechargeCardViewId);
@@ -191,6 +177,28 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    /**
+     * Called when leaving the activity
+     */
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    /**
+     * Called when returning to the activity
+     */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -199,6 +207,14 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 
 //    private void openAdmobActivity() {

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "212114041509-13f6vltj53umvrlqe1fi6aasvqp0dgeu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trojan.tony.ussdassistant",
+            "certificate_hash": "cdf9be8eeb6f1dd8de2e165679e209ff6277a12a"
+          }
+        },
+        {
           "client_id": "212114041509-t9r91g1n7itp9dci4ogqem8cg7jsl0iv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

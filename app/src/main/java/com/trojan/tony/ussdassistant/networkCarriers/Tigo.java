@@ -13,7 +13,8 @@ import android.view.View;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.trojan.tony.ussdassistant.Admob;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.trojan.tony.ussdassistant.R;
 
 import static com.trojan.tony.ussdassistant.Constants.rail;
@@ -24,9 +25,6 @@ import static com.trojan.tony.ussdassistant.Constants.tigoBundle3Menu;
 import static com.trojan.tony.ussdassistant.Constants.tigoPesaMenu;
 
 public class Tigo extends AppCompatActivity {
-
-
-
     private View view;
     private AdView mAdView;
 
@@ -92,19 +90,14 @@ public class Tigo extends AppCompatActivity {
             }
         });
 
-        //Admob
-        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
-
-        //   --- Admob ---
-        view=getWindow().getDecorView().getRootView();
-
-        Admob.createLoadBanner(getApplicationContext(), view);
-        Admob.createLoadInterstitial(getApplicationContext(),null);
-        //   --- *** ---
-
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
 
         mAdView = findViewById(R.id.adView);
+
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
