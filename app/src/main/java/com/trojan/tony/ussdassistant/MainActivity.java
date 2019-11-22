@@ -74,14 +74,9 @@ public class MainActivity extends AppCompatActivity
         mAdView = findViewById(R.id.adView);
 
         AdRequest adRequest = new AdRequest.Builder().build();
-//                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-//                .build();
 
         // Start loading the ad in the background.
         mAdView.loadAd(adRequest);
-
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
 
 
         //Check if calling permission is granted if not permission is requested
@@ -155,8 +150,6 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        //Initialization of AdMob Ads
-     //   MobileAds.initialize(this, getString(R.string.adMobAppId));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -217,10 +210,6 @@ public class MainActivity extends AppCompatActivity
         super.onDestroy();
     }
 
-//    private void openAdmobActivity() {
-//        Intent addMob = new Intent(MainActivity.this, AddMob.class);
-//        startActivity(addMob);
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
