@@ -59,6 +59,7 @@
                 android:inputType="number"
                 android:layout_marginTop="100dp"
                 android:hint="@string/enter_your_voucher_pin"
+                android:textAllCaps="true"
                 android:textAlignment="center"
                 android:importantForAutofill="no" />
 

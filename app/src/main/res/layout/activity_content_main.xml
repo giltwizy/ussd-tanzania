@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_showIntersitial_ad_unit_id"
+        ads:adUnitId="@string/mainActivity_ad_unit_id"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent">
@@ -34,7 +34,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/generalCheckBalanceCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -68,12 +68,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/check_balance"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/rechargeCardViewId"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -107,10 +108,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/recharge"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
@@ -123,7 +125,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/generalTigoPesaCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -157,12 +159,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/tigo_pesa"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/generalSerikaliCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -195,10 +198,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/malipo_ya_serikali"
+                    android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
@@ -211,7 +216,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/generalAirtelMoneyCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -245,12 +250,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/airtel_money"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/generalHaloPesaCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -284,10 +290,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@string/halopesa"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
 

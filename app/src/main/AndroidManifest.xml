@@ -17,16 +17,18 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
 
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8241388126213878~5889758411" />
+
         <!-- Include the AdActivity configChanges and theme. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
         <activity android:name=".networkCarriers.Zantel" />
-        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8241388126213878~5889758411" />
+
 
         <activity
             android:name=".MainActivity"

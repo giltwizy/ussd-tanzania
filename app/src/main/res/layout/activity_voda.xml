@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_showIntersitial_ad_unit_id"
+        ads:adUnitId="@string/mainActivity_ad_unit_id"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent">
@@ -33,8 +33,8 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/vodaCheckBalanceCardViewId"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/vodaBalanceBundleCardViewId"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -67,14 +67,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/check_balance"
+                    android:text="@string/salio_la_kifurushi"
                     android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/mPesaCardViewId"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -111,7 +112,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
@@ -124,7 +125,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/vodaBundle3CardViewId"
             android:layout_width="0dp"
             android:clickable="true"
@@ -159,12 +160,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/bundle_2"
+                    android:text="@string/bundle_1"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
 
@@ -179,7 +180,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/vodaBundle1CardViewId"
             android:layout_width="0dp"
             android:clickable="true"
@@ -218,9 +219,9 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/vodaBundle2CardViewId"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
@@ -252,12 +253,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/bundle_1"
+                    android:text="@string/bundle_2"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>

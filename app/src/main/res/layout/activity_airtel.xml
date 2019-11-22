@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_showIntersitial_ad_unit_id"
+        ads:adUnitId="@string/mainActivity_ad_unit_id"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent">
@@ -25,192 +25,246 @@
     </com.google.android.gms.ads.AdView>
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:clipToPadding="false"
-    android:gravity="center"
-    android:orientation="horizontal">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/checkBalanceCardView"
-        android:layout_width="0dp"
-        android:clickable="true"
-        app:cardCornerRadius="30dp"
-        android:layout_margin="5dp"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true">
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airtelBalanceCardView"
+            android:layout_width="0dp"
+            android:clickable="true"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:focusable="true">
 
-            <ImageView
-                android:layout_width="@dimen/icon_frame"
-                android:layout_height="@dimen/icon_frame"
-                android:background="@drawable/circlebackgroundblue"
-                android:padding="10dp"
-                android:src="@drawable/ic_star_black_16dp"
-                android:contentDescription="@string/check_balance" />
-
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_margin="5dp"
-                android:background="@color/material_deep_purple"
-                android:padding="10dp" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/check_balance"
-                android:textSize="@dimen/text_size"
-                android:textStyle="bold" />
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/icon_frame"
+                    android:layout_height="@dimen/icon_frame"
+                    android:background="@drawable/circlebackgroundblue"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_star_black_16dp" />
 
-    </android.support.v7.widget.CardView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/material_deep_purple"
+                    android:padding="10dp" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/airtelMoneyCardView"
-        android:layout_width="0dp"
-        android:clickable="true"
-        app:cardCornerRadius="30dp"
-        android:layout_margin="5dp"
-        android:layout_height="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/check_balance"
+                    android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airtelMoneyCardView"
+            android:layout_width="0dp"
+            android:clickable="true"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_frame"
+                    android:layout_height="@dimen/icon_frame"
+                    android:background="@drawable/circlebackgroundpurple"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_monetization_on_black_16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/material_deep_purple"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/airtel_money"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true">
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airtelBundle1CardView"
+            android:layout_width="0dp"
+            android:clickable="true"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:focusable="true">
 
-            <ImageView
-                android:layout_width="@dimen/icon_frame"
-                android:layout_height="@dimen/icon_frame"
-                android:background="@drawable/circlebackgroundpurple"
-                android:padding="10dp"
-                android:src="@drawable/ic_monetization_on_black_16dp"
-                android:contentDescription="@string/airtel_money" />
+            <LinearLayout
+                android:layout_width="184dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_margin="5dp"
-                android:background="@color/material_deep_purple"
-                android:padding="10dp" />
+                <ImageView
+                    android:layout_width="@dimen/icon_frame"
+                    android:layout_height="@dimen/icon_frame"
+                    android:background="@drawable/circlebackgroundgreen"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_layers_black_16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/airtel_money"
-                android:textSize="@dimen/text_size"
-                android:textStyle="bold" />
-        </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/material_deep_purple"
+                    android:padding="10dp" />
 
-    </android.support.v7.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/bundle_1"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
 
-</LinearLayout>
+    </LinearLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:clipToPadding="false"
-    android:gravity="center"
-    android:orientation="horizontal">
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/airtelBundle1CardView"
-        android:layout_width="0dp"
-        app:cardCornerRadius="30dp"
-        android:clickable="true"
-        android:layout_margin="5dp"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true">
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airtelUniCardView"
+            android:layout_width="0dp"
+            android:clickable="true"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:focusable="true">
 
-            <ImageView
-                android:layout_width="@dimen/icon_frame"
-                android:layout_height="@dimen/icon_frame"
-                android:background="@drawable/circlebackgroundgreen"
-                android:padding="10dp"
-                android:src="@drawable/ic_school_black_16dp" />
-
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_margin="5dp"
-                android:background="@color/material_deep_purple"
-                android:padding="10dp" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/uni"
-                android:textSize="@dimen/text_size"
-                android:textStyle="bold" />
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/icon_frame"
+                    android:layout_height="@dimen/icon_frame"
+                    android:background="@drawable/circlebackgroundgreen"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_layers_black_16dp" />
 
-    </android.support.v7.widget.CardView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/material_deep_purple"
+                    android:padding="10dp" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/airtelBundle2CardView"
-        android:layout_width="0dp"
-        app:cardCornerRadius="30dp"
-        android:layout_margin="5dp"
-        android:clickable="true"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:focusable="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/uni"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airtelBundle2CardView"
+            android:layout_width="0dp"
+            android:clickable="true"
+            app:cardCornerRadius="30dp"
+            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:focusable="true">
 
-            <ImageView
-                android:layout_width="@dimen/icon_frame"
-                android:layout_height="@dimen/icon_frame"
-                android:background="@drawable/circlebackgroundgreen"
-                android:padding="10dp"
-                android:src="@drawable/ic_layers_black_16dp" />
-
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_margin="5dp"
-                android:background="@color/material_deep_purple"
-                android:padding="10dp" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/bundle"
-                android:textSize="@dimen/text_size"
-                android:textStyle="bold" />
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/icon_frame"
+                    android:layout_height="@dimen/icon_frame"
+                    android:background="@drawable/circlebackgroundgreen"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_layers_black_16dp" />
 
-    </android.support.v7.widget.CardView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/material_deep_purple"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/bundle_2"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
 
-</LinearLayout>
+    </LinearLayout>
+
 
 </LinearLayout>
