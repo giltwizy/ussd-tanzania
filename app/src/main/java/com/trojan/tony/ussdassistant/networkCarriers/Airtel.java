@@ -20,7 +20,6 @@ import com.trojan.tony.ussdassistant.R;
 
 import static com.trojan.tony.ussdassistant.Constants.airtelBundle1Menu;
 import static com.trojan.tony.ussdassistant.Constants.airtelBundle2Menu;
-import static com.trojan.tony.ussdassistant.Constants.airtelBundle3Menu;
 import static com.trojan.tony.ussdassistant.Constants.airtelMoneyMenu;
 import static com.trojan.tony.ussdassistant.Constants.airtelUniMenu;
 import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
@@ -49,13 +48,11 @@ public class Airtel extends AppCompatActivity {
         mAdView.loadAd(adRequest);
 
 
-        CardView balance = findViewById(R.id.airtelCheckBalanceCardView);
+        CardView balance = findViewById(R.id.airtelBalanceCardView);
         CardView airtelmoney = findViewById(R.id.airtelMoneyCardView);
         CardView uni = findViewById(R.id.airtelUniCardView);
         CardView airtelBundle1 = findViewById(R.id.airtelBundle1CardView);
         CardView airtelBundle2 = findViewById(R.id.airtelBundle2CardView);
-        CardView airtelBundle3 = findViewById(R.id.airtelBundle3CardView);
-
 
 
         balance.setOnClickListener(new View.OnClickListener() {
@@ -98,15 +95,6 @@ public class Airtel extends AppCompatActivity {
             }
         });
 
-        airtelBundle3.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(airtelBundle3Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
 
         uni.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")

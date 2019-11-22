@@ -16,8 +16,7 @@ public class Constants {
     public static final String airtelMoneyMenu ="tel:*150*60";
     public static final String airtelBundle1Menu = "tel:*148*88";
     public static final String airtelBundle2Menu = "tel:*149*99";
-    public static final String airtelBundle3Menu = "tel:*149*81";
-    public static final String airtelUniMenu = "tel:*149*15";
+    public static final String airtelUniMenu = "tel:*149*81";
 
     //Tigo
     public static final String tigoPesaMenu = "tel:*150*01";
