@@ -2,7 +2,6 @@ package com.trojan.tony.ussdassistant;
 
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -91,59 +90,109 @@ public class MainActivity extends AppCompatActivity
         CardView airtelMoney = findViewById(R.id.generalAirtelMoneyCardView);
         CardView haloPesa = findViewById(R.id.generalHaloPesaCardView);
 
-        recharge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent rechargeActivity = new Intent(MainActivity.this, Recharge.class);
-                startActivity(rechargeActivity);
-            }
-        });
 
-        balance.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(balanceMenu+rail));
-                startActivity(dialerIntent);
-            }
-        });
+                switch (v.getId()) {
+                    case R.id.rechargeCardViewId:
+                        Intent rechargeActivity = new Intent(MainActivity.this, Recharge.class);
+                        startActivity(rechargeActivity);
+                        break;
+                    case R.id.generalCheckBalanceCardView:
+                        Intent checkBalanceIntent = new Intent(Intent.ACTION_CALL);
+                        checkBalanceIntent.setData(Uri.parse(balanceMenu + rail));
+                        startActivity(checkBalanceIntent);
+                        break;
+                    case R.id.generalTigoPesaCardView:
+                        Intent tigoPesaIntent = new Intent(Intent.ACTION_CALL);
+                        tigoPesaIntent.setData(Uri.parse(tigoPesaMenu + rail));
+                        startActivity(tigoPesaIntent);
+                        break;
+                    case R.id.generalSerikaliCardView:
+                        Intent serikaliIntent = new Intent(Intent.ACTION_CALL);
+                        serikaliIntent.setData(Uri.parse(serikaliMenu + rail));
+                        startActivity(serikaliIntent);
+                        break;
+                    case R.id.generalAirtelMoneyCardView:
+                        Intent airtelMoneyIntent = new Intent(Intent.ACTION_CALL);
+                        airtelMoneyIntent.setData(Uri.parse(airtelMoneyMenu + rail));
+                        startActivity(airtelMoneyIntent);
+                        break;
+                    case R.id.generalHaloPesaCardView:
+                        Intent haloPesaIntent = new Intent(Intent.ACTION_CALL);
+                        haloPesaIntent.setData(Uri.parse(haloPesaMenu + rail));
+                        startActivity(haloPesaIntent);
+                        break;
+                    default:
+                        break;
+                }
+//                startActivity(dialerIntent);
 
-        tigoPesa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(tigoPesaMenu + rail));
-                startActivity(dialerIntent);
             }
-        });
+        };
 
-        serikali.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(serikaliMenu+rail));
-                startActivity(dialerIntent);
-            }
-        });
 
-        airtelMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(airtelMoneyMenu+rail));
-                startActivity(dialerIntent);
-            }
-        });
+        recharge.setOnClickListener(listener);
+        balance.setOnClickListener(listener);
+        tigoPesa.setOnClickListener(listener);
+        serikali.setOnClickListener(listener);
+        airtelMoney.setOnClickListener(listener);
+        haloPesa.setOnClickListener(listener);
 
-        haloPesa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(haloPesaMenu+rail));
-                startActivity(dialerIntent);
-            }
-        });
+//        recharge.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent rechargeActivity = new Intent(MainActivity.this, Recharge.class);
+//                startActivity(rechargeActivity);
+//            }
+//        });
+//
+//        balance.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("MissingPermission")
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(balanceMenu+rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        tigoPesa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(tigoPesaMenu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        serikali.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(serikaliMenu+rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        airtelMoney.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(airtelMoneyMenu+rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        haloPesa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(haloPesaMenu+rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
