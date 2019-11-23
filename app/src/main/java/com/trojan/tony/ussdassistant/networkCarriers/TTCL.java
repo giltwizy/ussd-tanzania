@@ -2,13 +2,12 @@ package com.trojan.tony.ussdassistant.networkCarriers;
 
 import android.content.Intent;
 import android.net.Uri;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -40,47 +39,86 @@ public class TTCL extends AppCompatActivity {
         }
 
 
-        CardView balance = findViewById(R.id.zantelCheckBalanceCardViewId);
-        CardView tpesa = findViewById(R.id.tPesaCardViewId);
-        CardView uni = findViewById(R.id.ttclBundle1CardViewId);
-        CardView bundle1 = findViewById(R.id.ttclBundle2CardViewId);
+        CardView balance = findViewById(R.id.ttclCheckBalanceCardView);
+        CardView tpesa = findViewById(R.id.tPesaCardView);
+        CardView uni = findViewById(R.id.ttclUniCardView);
+        CardView bundle1 = findViewById(R.id.ttclBundle1CardView);
 
 
-        tpesa.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(tPesaMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+                switch (v.getId()) {
+                    case R.id.ttclCheckBalanceCardView:
+                        Intent ttclCheckBalanceIntent = new Intent(Intent.ACTION_CALL);
+                        ttclCheckBalanceIntent.setData(Uri.parse(balanceMenu + rail));
+                        startActivity(ttclCheckBalanceIntent);
+                        break;
+                    case R.id.tPesaCardView:
+                        Intent tPesaIntent = new Intent(Intent.ACTION_CALL);
+                        tPesaIntent.setData(Uri.parse(tPesaMenu + rail));
+                        startActivity(tPesaIntent);
+                        break;
+                    case R.id.ttclUniCardView:
+                        Intent ttclUniIntent = new Intent(Intent.ACTION_CALL);
+                        ttclUniIntent.setData(Uri.parse(ttclUniMenu + rail));
+                        startActivity(ttclUniIntent);
+                        break;
+                    case R.id.ttclBundle1CardView:
+                        Intent ttclBundle1Intent = new Intent(Intent.ACTION_CALL);
+                        ttclBundle1Intent.setData(Uri.parse(ttclBundle1Menu + rail));
+                        startActivity(ttclBundle1Intent);
+                        break;
+                    default:
+                        break;
+                }
+//                startActivity(dialerIntent);
 
-        balance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(balanceMenu + rail));
-                startActivity(dialerIntent);
             }
-        });
+        };
 
-        bundle1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(ttclBundle1Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
 
-        uni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(ttclUniMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+        balance.setOnClickListener(listener);
+        tpesa.setOnClickListener(listener);
+        bundle1.setOnClickListener(listener);
+        uni.setOnClickListener(listener);
+
+
+//        tpesa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(tPesaMenu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        balance.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(balanceMenu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        bundle1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(ttclBundle1Menu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        uni.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(ttclUniMenu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override

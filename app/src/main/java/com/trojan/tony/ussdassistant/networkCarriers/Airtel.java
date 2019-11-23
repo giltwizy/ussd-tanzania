@@ -1,15 +1,13 @@
 package com.trojan.tony.ussdassistant.networkCarriers;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -55,56 +53,101 @@ public class Airtel extends AppCompatActivity {
         CardView airtelBundle2 = findViewById(R.id.airtelBundle2CardView);
 
 
-        balance.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(balanceMenu+rail));
-                startActivity(dialerIntent);
-            }
-        });
+                switch (v.getId()) {
+                    case R.id.airtelBalanceCardView:
+                        Intent airtelBalanceIntent = new Intent(Intent.ACTION_CALL);
+                        airtelBalanceIntent.setData(Uri.parse(balanceMenu + rail));
+                        startActivity(airtelBalanceIntent);
+                        break;
+                    case R.id.airtelMoneyCardView:
+                        Intent airtelMoneyIntent = new Intent(Intent.ACTION_CALL);
+                        airtelMoneyIntent.setData(Uri.parse(airtelMoneyMenu + rail));
+                        startActivity(airtelMoneyIntent);
+                        break;
+                    case R.id.airtelUniCardView:
+                        Intent airtelUniIntent = new Intent(Intent.ACTION_CALL);
+                        airtelUniIntent.setData(Uri.parse(airtelUniMenu + rail));
+                        startActivity(airtelUniIntent);
+                        break;
+                    case R.id.airtelBundle1CardView:
+                        Intent airtelBundle1Intent = new Intent(Intent.ACTION_CALL);
+                        airtelBundle1Intent.setData(Uri.parse(airtelBundle1Menu + rail));
+                        startActivity(airtelBundle1Intent);
+                        break;
+                    case R.id.airtelBundle2CardView:
+                        Intent airtelBundle2Intent = new Intent(Intent.ACTION_CALL);
+                        airtelBundle2Intent.setData(Uri.parse(airtelBundle2Menu + rail));
+                        startActivity(airtelBundle2Intent);
+                        break;
+                    default:
+                        break;
+                }
+//                startActivity(dialerIntent);
 
-        airtelmoney.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(airtelMoneyMenu + rail));
-                startActivity(dialerIntent);
             }
-        });
-
-        airtelBundle1.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(airtelBundle1Menu+rail));
-                startActivity(dialerIntent);
-            }
-        });
-
-        airtelBundle2.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(airtelBundle2Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+        };
 
 
-        uni.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(airtelUniMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+        balance.setOnClickListener(listener);
+        airtelBundle1.setOnClickListener(listener);
+        airtelBundle2.setOnClickListener(listener);
+        airtelmoney.setOnClickListener(listener);
+        uni.setOnClickListener(listener);
+
+
+//        balance.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("MissingPermission")
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(balanceMenu+rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        airtelmoney.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("MissingPermission")
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(airtelMoneyMenu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        airtelBundle1.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("MissingPermission")
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(airtelBundle1Menu+rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//        airtelBundle2.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("MissingPermission")
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(airtelBundle2Menu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
+//
+//
+//        uni.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("MissingPermission")
+//            @Override
+//            public void onClick(View v) {
+//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
+//                dialerIntent.setData(Uri.parse(airtelUniMenu + rail));
+//                startActivity(dialerIntent);
+//            }
+//        });
 
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
