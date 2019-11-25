@@ -34,7 +34,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/halotelCheckBalanceCardViewId"
+            android:id="@+id/halotelBalanceCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -73,7 +73,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/halopesaCardViewId"
+            android:id="@+id/halopesaCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -123,7 +123,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/halotelBundle1CardViewId"
+            android:id="@+id/halotelUniCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -162,7 +162,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/halotelBundle2CardViewId"
+            android:id="@+id/halotelBundle1CardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"

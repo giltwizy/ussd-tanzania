@@ -94,35 +94,42 @@ public class MainActivity extends AppCompatActivity
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle params = new Bundle();
                 switch (v.getId()) {
                     case R.id.rechargeCardViewId:
                         Intent rechargeActivity = new Intent(MainActivity.this, Recharge.class);
                         startActivity(rechargeActivity);
+                        mFirebaseAnalytics.logEvent("recharge_activity", params);
                         break;
                     case R.id.generalCheckBalanceCardView:
                         Intent checkBalanceIntent = new Intent(Intent.ACTION_CALL);
                         checkBalanceIntent.setData(Uri.parse(balanceMenu + rail));
                         startActivity(checkBalanceIntent);
+                        mFirebaseAnalytics.logEvent("balance_button", params);
                         break;
                     case R.id.generalTigoPesaCardView:
                         Intent tigoPesaIntent = new Intent(Intent.ACTION_CALL);
                         tigoPesaIntent.setData(Uri.parse(tigoPesaMenu + rail));
                         startActivity(tigoPesaIntent);
+                        mFirebaseAnalytics.logEvent("tigoPesa_button", params);
                         break;
                     case R.id.generalSerikaliCardView:
                         Intent serikaliIntent = new Intent(Intent.ACTION_CALL);
                         serikaliIntent.setData(Uri.parse(serikaliMenu + rail));
                         startActivity(serikaliIntent);
+                        mFirebaseAnalytics.logEvent("serikali_button", params);
                         break;
                     case R.id.generalAirtelMoneyCardView:
                         Intent airtelMoneyIntent = new Intent(Intent.ACTION_CALL);
                         airtelMoneyIntent.setData(Uri.parse(airtelMoneyMenu + rail));
                         startActivity(airtelMoneyIntent);
+                        mFirebaseAnalytics.logEvent("airtelMoney_button", params);
                         break;
                     case R.id.generalHaloPesaCardView:
                         Intent haloPesaIntent = new Intent(Intent.ACTION_CALL);
                         haloPesaIntent.setData(Uri.parse(haloPesaMenu + rail));
                         startActivity(haloPesaIntent);
+                        mFirebaseAnalytics.logEvent("haloPesa_button", params);
                         break;
                     default:
                         break;

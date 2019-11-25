@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.trojan.tony.ussdassistant.Constants;
 import com.trojan.tony.ussdassistant.R;
 
@@ -27,11 +28,14 @@ public class Voda extends AppCompatActivity {
 
     private View view;
     private AdView mAdView;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voda);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -47,36 +51,46 @@ public class Voda extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle params = new Bundle();
                 switch (v.getId()) {
                     case R.id.vodaBalanceBundleCardView:
                         Intent vodaBalanceBundleIntent = new Intent(Intent.ACTION_CALL);
                         vodaBalanceBundleIntent.setData(Uri.parse(Constants.balanceBundle + rail));
                         startActivity(vodaBalanceBundleIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("vodaBalanceBundle_button", params);
                         break;
                     case R.id.mPesaCardView:
                         Intent mPesaIntent = new Intent(Intent.ACTION_CALL);
                         mPesaIntent.setData(Uri.parse(mPesaMenu + rail));
                         startActivity(mPesaIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("mPesa_button", params);
                         break;
                     case R.id.vodaBundle1CardView:
                         Intent vodaBundle1Intent = new Intent(Intent.ACTION_CALL);
                         vodaBundle1Intent.setData(Uri.parse(vodaBundle1Menu + rail));
                         startActivity(vodaBundle1Intent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("vodaBundle1_button", params);
                         break;
                     case R.id.vodaBundle2CardView:
                         Intent vodaBundle2Intent = new Intent(Intent.ACTION_CALL);
                         vodaBundle2Intent.setData(Uri.parse(vodaBundle2Menu + rail));
                         startActivity(vodaBundle2Intent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("vodaBundle2_button", params);
                         break;
                     case R.id.vodaUniMenuCardView:
                         Intent vodaUniMenuIntent = new Intent(Intent.ACTION_CALL);
                         vodaUniMenuIntent.setData(Uri.parse(vodaUniMenu + rail));
                         startActivity(vodaUniMenuIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("vodaUni_button", params);
                         break;
                     default:
                         break;
                 }
-//                startActivity(dialerIntent);
 
             }
         };

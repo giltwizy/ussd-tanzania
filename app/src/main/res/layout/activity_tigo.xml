@@ -35,7 +35,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tigoCheckBalanceCardView"
+            android:id="@+id/tigoBundleBalanceCardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"

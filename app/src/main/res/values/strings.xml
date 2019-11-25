@@ -55,7 +55,7 @@
     <string name="real_ad_unit_id">ca-app-pub-8241388126213878/5507964438</string>
     <string name="network_ad_unit_id">ca-app-pub-8241388126213878/2923725869</string>
     <string name="test_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="mainActivity_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="mainActivity_ad_unit_id">ca-app-pub-8241388126213878/5507964438</string>
     <string name="check_balance_menu">Check balance menu</string>
     <string name="recharge_menu">Recharge menu</string>
     <string name="tigo_pesa_menu">Tigo Pesa menu</string>

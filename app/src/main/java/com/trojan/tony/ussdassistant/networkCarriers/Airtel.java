@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.trojan.tony.ussdassistant.R;
 
 import static com.trojan.tony.ussdassistant.Constants.airtelBundle1Menu;
@@ -28,11 +29,14 @@ public class Airtel extends AppCompatActivity {
 
     private View view;
     private AdView mAdView;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_airtel);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -56,36 +60,46 @@ public class Airtel extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle params = new Bundle();
                 switch (v.getId()) {
                     case R.id.airtelBalanceCardView:
                         Intent airtelBalanceIntent = new Intent(Intent.ACTION_CALL);
                         airtelBalanceIntent.setData(Uri.parse(balanceMenu + rail));
                         startActivity(airtelBalanceIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("airtelBalance_button", params);
                         break;
                     case R.id.airtelMoneyCardView:
                         Intent airtelMoneyIntent = new Intent(Intent.ACTION_CALL);
                         airtelMoneyIntent.setData(Uri.parse(airtelMoneyMenu + rail));
                         startActivity(airtelMoneyIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("airtelMoney_button", params);
                         break;
                     case R.id.airtelUniCardView:
                         Intent airtelUniIntent = new Intent(Intent.ACTION_CALL);
                         airtelUniIntent.setData(Uri.parse(airtelUniMenu + rail));
                         startActivity(airtelUniIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("airtelUni_button", params);
                         break;
                     case R.id.airtelBundle1CardView:
                         Intent airtelBundle1Intent = new Intent(Intent.ACTION_CALL);
                         airtelBundle1Intent.setData(Uri.parse(airtelBundle1Menu + rail));
                         startActivity(airtelBundle1Intent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("airtelBundle1_button", params);
                         break;
                     case R.id.airtelBundle2CardView:
                         Intent airtelBundle2Intent = new Intent(Intent.ACTION_CALL);
                         airtelBundle2Intent.setData(Uri.parse(airtelBundle2Menu + rail));
                         startActivity(airtelBundle2Intent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("airtelBundle2_button", params);
                         break;
                     default:
                         break;
                 }
-//                startActivity(dialerIntent);
 
             }
         };
@@ -97,57 +111,6 @@ public class Airtel extends AppCompatActivity {
         airtelmoney.setOnClickListener(listener);
         uni.setOnClickListener(listener);
 
-
-//        balance.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("MissingPermission")
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(balanceMenu+rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        airtelmoney.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("MissingPermission")
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(airtelMoneyMenu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        airtelBundle1.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("MissingPermission")
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(airtelBundle1Menu+rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        airtelBundle2.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("MissingPermission")
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(airtelBundle2Menu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//
-//        uni.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("MissingPermission")
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(airtelUniMenu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
 
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

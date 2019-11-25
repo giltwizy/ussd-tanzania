@@ -2,19 +2,19 @@ package com.trojan.tony.ussdassistant.networkCarriers;
 
 import android.content.Intent;
 import android.net.Uri;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.trojan.tony.ussdassistant.R;
 
 import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
@@ -28,54 +28,66 @@ public class Halotel extends AppCompatActivity {
 
     private View view;
     private AdView mAdView;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_halotel);
 
-        CardView balance = findViewById(R.id.halotelCheckBalanceCardViewId);
-        CardView halopesa = findViewById(R.id.halopesaCardViewId);
-        CardView uni = findViewById(R.id.halotelBundle1CardViewId);
-        CardView bundle1 = findViewById(R.id.halotelBundle2CardViewId);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        halopesa.setOnClickListener(new View.OnClickListener() {
+        CardView balance = findViewById(R.id.halotelBalanceCardView);
+        CardView halopesa = findViewById(R.id.halopesaCardView);
+        CardView bundle1 = findViewById(R.id.halotelBundle1CardView);
+        CardView uni = findViewById(R.id.halotelUniCardView);
+
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(haloPesaMenu+rail));
-                startActivity(dialerIntent);
+                Bundle params = new Bundle();
+                switch (v.getId()) {
+                    case R.id.halotelBalanceCardView:
+                        Intent halotelBalanceIntent = new Intent(Intent.ACTION_CALL);
+                        halotelBalanceIntent.setData(Uri.parse(balanceMenu + rail));
+                        startActivity(halotelBalanceIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("halotelBalance_button", params);
+                        break;
+                    case R.id.halopesaCardView:
+                        Intent halopesaIntent = new Intent(Intent.ACTION_CALL);
+                        halopesaIntent.setData(Uri.parse(haloPesaMenu + rail));
+                        startActivity(halopesaIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("halopesa_button", params);
+                        break;
+                    case R.id.halotelBundle1CardView:
+                        Intent halotelBundle1Intent = new Intent(Intent.ACTION_CALL);
+                        halotelBundle1Intent.setData(Uri.parse(halotelBundle1Menu + rail));
+                        startActivity(halotelBundle1Intent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("halotelBundle1_button", params);
+                        break;
+                    case R.id.halotelUniCardView:
+                        Intent halotelUniIntent = new Intent(Intent.ACTION_CALL);
+                        halotelUniIntent.setData(Uri.parse(halotelUniMenu + rail));
+                        startActivity(halotelUniIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("halotelUni_button", params);
+                        break;
+                    default:
+                        break;
+                }
+
             }
-        });
-
-        balance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(balanceMenu+rail));
-                startActivity(dialerIntent);
-            }
-        });
+        };
 
 
+        balance.setOnClickListener(listener);
+        halopesa.setOnClickListener(listener);
+        bundle1.setOnClickListener(listener);
+        uni.setOnClickListener(listener);
 
-        bundle1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(halotelBundle1Menu+rail));
-                startActivity(dialerIntent);
-            }
-        });
-
-        uni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(halotelUniMenu+rail));
-                startActivity(dialerIntent);
-            }
-        });
 
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

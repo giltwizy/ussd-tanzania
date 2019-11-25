@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.trojan.tony.ussdassistant.R;
 
 import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
@@ -26,11 +27,14 @@ public class Zantel extends AppCompatActivity {
 
     private View view;
     private AdView mAdView;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zantel);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 
         if (getSupportActionBar() != null) {
@@ -48,31 +52,39 @@ public class Zantel extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle params = new Bundle();
                 switch (v.getId()) {
                     case R.id.zantelBalanceCardView:
                         Intent zantelBalanceIntent = new Intent(Intent.ACTION_CALL);
                         zantelBalanceIntent.setData(Uri.parse(balanceMenu + rail));
                         startActivity(zantelBalanceIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("zantelBalance_button", params);
                         break;
                     case R.id.ezypesaCardView:
                         Intent ezypesaIntent = new Intent(Intent.ACTION_CALL);
                         ezypesaIntent.setData(Uri.parse(ezyPesaMenu + rail));
                         startActivity(ezypesaIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("ezypesaBundle_button", params);
                         break;
                     case R.id.zantelBundle1CardView:
                         Intent zantelBundle1Intent = new Intent(Intent.ACTION_CALL);
                         zantelBundle1Intent.setData(Uri.parse(zantelBundle1Menu + rail));
                         startActivity(zantelBundle1Intent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("zantelBundle1_button", params);
                         break;
                     case R.id.zantelUniCardView:
                         Intent zantelUniIntent = new Intent(Intent.ACTION_CALL);
                         zantelUniIntent.setData(Uri.parse(zantelUniMenu + rail));
                         startActivity(zantelUniIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("zantelUni_button", params);
                         break;
                     default:
                         break;
                 }
-//                startActivity(dialerIntent);
 
             }
         };

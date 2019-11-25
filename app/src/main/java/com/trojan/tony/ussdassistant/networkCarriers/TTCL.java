@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.trojan.tony.ussdassistant.R;
 
 import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
@@ -26,11 +27,14 @@ public class TTCL extends AppCompatActivity {
 
     private View view;
     private AdView mAdView;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttcl);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 
         if (getSupportActionBar() != null) {
@@ -39,7 +43,7 @@ public class TTCL extends AppCompatActivity {
         }
 
 
-        CardView balance = findViewById(R.id.ttclCheckBalanceCardView);
+        CardView balance = findViewById(R.id.ttclBalanceCardView);
         CardView tpesa = findViewById(R.id.tPesaCardView);
         CardView uni = findViewById(R.id.ttclUniCardView);
         CardView bundle1 = findViewById(R.id.ttclBundle1CardView);
@@ -48,31 +52,39 @@ public class TTCL extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle params = new Bundle();
                 switch (v.getId()) {
-                    case R.id.ttclCheckBalanceCardView:
+                    case R.id.ttclBalanceCardView:
                         Intent ttclCheckBalanceIntent = new Intent(Intent.ACTION_CALL);
                         ttclCheckBalanceIntent.setData(Uri.parse(balanceMenu + rail));
                         startActivity(ttclCheckBalanceIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("ttclBalance_button", params);
                         break;
                     case R.id.tPesaCardView:
                         Intent tPesaIntent = new Intent(Intent.ACTION_CALL);
                         tPesaIntent.setData(Uri.parse(tPesaMenu + rail));
                         startActivity(tPesaIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("tPesa_button", params);
                         break;
                     case R.id.ttclUniCardView:
                         Intent ttclUniIntent = new Intent(Intent.ACTION_CALL);
                         ttclUniIntent.setData(Uri.parse(ttclUniMenu + rail));
                         startActivity(ttclUniIntent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("ttclUni_button", params);
                         break;
                     case R.id.ttclBundle1CardView:
                         Intent ttclBundle1Intent = new Intent(Intent.ACTION_CALL);
                         ttclBundle1Intent.setData(Uri.parse(ttclBundle1Menu + rail));
                         startActivity(ttclBundle1Intent);
+                        params.putInt("ButtonID", v.getId());
+                        mFirebaseAnalytics.logEvent("ttclBundle1_button", params);
                         break;
                     default:
                         break;
                 }
-//                startActivity(dialerIntent);
 
             }
         };
