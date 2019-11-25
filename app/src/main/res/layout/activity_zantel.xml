@@ -34,7 +34,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/zantelCheckBalanceCardViewId"
+            android:id="@+id/zantelBalanceCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -52,6 +52,7 @@
                     android:layout_height="@dimen/icon_frame"
                     android:background="@drawable/circlebackgroundblue"
                     android:padding="10dp"
+                    android:contentDescription="@string/balance_drawable"
                     android:src="@drawable/ic_star_black_16dp" />
 
                 <View
@@ -73,7 +74,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/ezypesaCardViewId"
+            android:id="@+id/ezypesaCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -91,6 +92,7 @@
                     android:layout_height="@dimen/icon_frame"
                     android:background="@drawable/circlebackgroundpurple"
                     android:padding="10dp"
+                    android:contentDescription="@string/ezypesa_drawable"
                     android:src="@drawable/ic_monetization_on_black_16dp" />
 
                 <View
@@ -123,7 +125,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/zantelBundle1CardViewId"
+            android:id="@+id/zantelUniCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -141,6 +143,7 @@
                     android:layout_height="@dimen/icon_frame"
                     android:background="@drawable/circlebackgroundgreen"
                     android:padding="10dp"
+                    android:contentDescription="@string/uni_drawable"
                     android:src="@drawable/ic_school_black_16dp" />
 
                 <View
@@ -162,7 +165,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/zantelBundle2CardViewId"
+            android:id="@+id/zantelBundle1CardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -180,6 +183,7 @@
                     android:layout_height="@dimen/icon_frame"
                     android:background="@drawable/circlebackgroundgreen"
                     android:padding="10dp"
+                    android:contentDescription="@string/bundle_drawable"
                     android:src="@drawable/ic_layers_black_16dp" />
 
                 <View

@@ -34,7 +34,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/vodaBalanceBundleCardViewId"
+            android:id="@+id/vodaBalanceBundleCardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -76,7 +76,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/mPesaCardViewId"
+            android:id="@+id/mPesaCardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
@@ -126,7 +126,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/vodaBundle3CardViewId"
+            android:id="@+id/vodaBundle1CardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -181,7 +181,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/vodaBundle1CardViewId"
+            android:id="@+id/vodaUniMenuCardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -222,7 +222,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/vodaBundle2CardViewId"
+            android:id="@+id/vodaBundle2CardView"
             android:layout_width="0dp"
             app:cardCornerRadius="30dp"
             android:layout_margin="5dp"

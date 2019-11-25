@@ -2,22 +2,21 @@ package com.trojan.tony.ussdassistant.networkCarriers;
 
 import android.content.Intent;
 import android.net.Uri;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.trojan.tony.ussdassistant.Constants;
 import com.trojan.tony.ussdassistant.R;
 
-import static com.trojan.tony.ussdassistant.Constants.salioLaKifurushi;
 import static com.trojan.tony.ussdassistant.Constants.mPesaMenu;
 import static com.trojan.tony.ussdassistant.Constants.rail;
 import static com.trojan.tony.ussdassistant.Constants.vodaBundle1Menu;
@@ -39,57 +38,56 @@ public class Voda extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        CardView balanceBundle = findViewById(R.id.vodaBalanceBundleCardViewId);
-        CardView mpesa = findViewById(R.id.mPesaCardViewId);
-        CardView uni = findViewById(R.id.vodaBundle1CardViewId);
-        CardView bundle1 = findViewById(R.id.vodaBundle2CardViewId);
-        CardView bundle2 = findViewById(R.id.vodaBundle3CardViewId);
+        CardView balanceBundle = findViewById(R.id.vodaBalanceBundleCardView);
+        CardView mpesa = findViewById(R.id.mPesaCardView);
+        CardView vodaBundle1 = findViewById(R.id.vodaUniMenuCardView);
+        CardView vodaBundle2 = findViewById(R.id.vodaBundle2CardView);
+        CardView vodaBundle3 = findViewById(R.id.vodaBundle1CardView);
 
-
-        mpesa.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(mPesaMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+                switch (v.getId()) {
+                    case R.id.vodaBalanceBundleCardView:
+                        Intent vodaBalanceBundleIntent = new Intent(Intent.ACTION_CALL);
+                        vodaBalanceBundleIntent.setData(Uri.parse(Constants.balanceBundle + rail));
+                        startActivity(vodaBalanceBundleIntent);
+                        break;
+                    case R.id.mPesaCardView:
+                        Intent mPesaIntent = new Intent(Intent.ACTION_CALL);
+                        mPesaIntent.setData(Uri.parse(mPesaMenu + rail));
+                        startActivity(mPesaIntent);
+                        break;
+                    case R.id.vodaBundle1CardView:
+                        Intent vodaBundle1Intent = new Intent(Intent.ACTION_CALL);
+                        vodaBundle1Intent.setData(Uri.parse(vodaBundle1Menu + rail));
+                        startActivity(vodaBundle1Intent);
+                        break;
+                    case R.id.vodaBundle2CardView:
+                        Intent vodaBundle2Intent = new Intent(Intent.ACTION_CALL);
+                        vodaBundle2Intent.setData(Uri.parse(vodaBundle2Menu + rail));
+                        startActivity(vodaBundle2Intent);
+                        break;
+                    case R.id.vodaUniMenuCardView:
+                        Intent vodaUniMenuIntent = new Intent(Intent.ACTION_CALL);
+                        vodaUniMenuIntent.setData(Uri.parse(vodaUniMenu + rail));
+                        startActivity(vodaUniMenuIntent);
+                        break;
+                    default:
+                        break;
+                }
+//                startActivity(dialerIntent);
 
-        balanceBundle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(salioLaKifurushi + rail));
-                startActivity(dialerIntent);
             }
-        });
+        };
 
-        bundle1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(vodaBundle1Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
-
-        bundle2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(vodaBundle2Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
-
-        uni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(vodaUniMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+        balanceBundle.setOnClickListener(listener);
+        mpesa.setOnClickListener(listener);
+        vodaBundle1.setOnClickListener(listener);
+        vodaBundle2.setOnClickListener(listener);
+        vodaBundle3.setOnClickListener(listener);
+        
+        
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override

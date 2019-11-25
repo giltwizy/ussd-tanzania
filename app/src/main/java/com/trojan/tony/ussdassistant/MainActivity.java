@@ -140,60 +140,6 @@ public class MainActivity extends AppCompatActivity
         airtelMoney.setOnClickListener(listener);
         haloPesa.setOnClickListener(listener);
 
-//        recharge.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent rechargeActivity = new Intent(MainActivity.this, Recharge.class);
-//                startActivity(rechargeActivity);
-//            }
-//        });
-//
-//        balance.setOnClickListener(new View.OnClickListener() {
-//            @SuppressLint("MissingPermission")
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(balanceMenu+rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        tigoPesa.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(tigoPesaMenu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        serikali.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(serikaliMenu+rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        airtelMoney.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(airtelMoneyMenu+rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        haloPesa.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(haloPesaMenu+rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

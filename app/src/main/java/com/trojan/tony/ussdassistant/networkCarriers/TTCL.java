@@ -84,42 +84,6 @@ public class TTCL extends AppCompatActivity {
         uni.setOnClickListener(listener);
 
 
-//        tpesa.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(tPesaMenu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        balance.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(balanceMenu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        bundle1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(ttclBundle1Menu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-//
-//        uni.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-//                dialerIntent.setData(Uri.parse(ttclUniMenu + rail));
-//                startActivity(dialerIntent);
-//            }
-//        });
-
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {

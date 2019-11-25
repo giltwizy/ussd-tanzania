@@ -2,13 +2,12 @@ package com.trojan.tony.ussdassistant.networkCarriers;
 
 import android.content.Intent;
 import android.net.Uri;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -38,57 +37,54 @@ public class Tigo extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        CardView balance = findViewById(R.id.tigoCheckBalanceCardViewId);
-        CardView tigopesa = findViewById(R.id.tigoPesaCardViewId);
-        CardView bundle1 = findViewById(R.id.tigoBundle1CardViewId);
-        CardView bundle2 = findViewById(R.id.tigoBundle2CardViewId);
-        CardView bundle3 = findViewById(R.id.tigoBundle3CardViewId);
+        CardView balance = findViewById(R.id.tigoCheckBalanceCardView);
+        CardView tigopesa = findViewById(R.id.tigoPesaCardView);
+        CardView bundle1 = findViewById(R.id.tigoBundle1CardView);
+        CardView bundle2 = findViewById(R.id.tigoBundle2CardView);
+        CardView bundle3 = findViewById(R.id.tigoBundle3CardView);
 
-
-        tigopesa.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(tigoPesaMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+                switch (v.getId()) {
+                    case R.id.tigoCheckBalanceCardView:
+                        Intent tigoCheckBalanceIntent = new Intent(Intent.ACTION_CALL);
+                        tigoCheckBalanceIntent.setData(Uri.parse(tigoBalanceMenu + rail));
+                        startActivity(tigoCheckBalanceIntent);
+                        break;
+                    case R.id.tigoPesaCardView:
+                        Intent tigoPesaIntent = new Intent(Intent.ACTION_CALL);
+                        tigoPesaIntent.setData(Uri.parse(tigoPesaMenu + rail));
+                        startActivity(tigoPesaIntent);
+                        break;
+                    case R.id.tigoBundle1CardView:
+                        Intent tigoBundle1Intent = new Intent(Intent.ACTION_CALL);
+                        tigoBundle1Intent.setData(Uri.parse(tigoBundle1Menu + rail));
+                        startActivity(tigoBundle1Intent);
+                        break;
+                    case R.id.tigoBundle2CardView:
+                        Intent tigoBundle2Intent = new Intent(Intent.ACTION_CALL);
+                        tigoBundle2Intent.setData(Uri.parse(tigoBundle2Menu + rail));
+                        startActivity(tigoBundle2Intent);
+                        break;
+                    case R.id.tigoBundle3CardView:
+                        Intent tigoBundle3Intent = new Intent(Intent.ACTION_CALL);
+                        tigoBundle3Intent.setData(Uri.parse(tigoBundle3Menu + rail));
+                        startActivity(tigoBundle3Intent);
+                        break;
+                    default:
+                        break;
+                }
+//                startActivity(dialerIntent);
 
-        balance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(tigoBalanceMenu + rail));
-                startActivity(dialerIntent);
             }
-        });
+        };
 
-        bundle1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(tigoBundle1Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
-
-        bundle2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(tigoBundle2Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
-
-        bundle3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(tigoBundle3Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+        balance.setOnClickListener(listener);
+        tigopesa.setOnClickListener(listener);
+        bundle1.setOnClickListener(listener);
+        bundle2.setOnClickListener(listener);
+        bundle3.setOnClickListener(listener);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override

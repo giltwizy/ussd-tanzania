@@ -67,6 +67,10 @@
     <string name="kifurushi_1">kifurushi 1</string>
     <string name="kifurushi_2">kifurushi 2</string>
     <string name="kifurushi_3">kifurushi 3</string>
+    <string name="balance_drawable">Balance Drawable</string>
+    <string name="ezypesa_drawable">ezyPesa Drawable</string>
+    <string name="uni_drawable">uni Drawable</string>
+    <string name="bundle_drawable">bundle Drawable</string>
 
 
 </resources>

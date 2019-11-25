@@ -2,13 +2,12 @@ package com.trojan.tony.ussdassistant.networkCarriers;
 
 import android.content.Intent;
 import android.net.Uri;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -40,46 +39,51 @@ public class Zantel extends AppCompatActivity {
         }
 
 
-        CardView balance = findViewById(R.id.zantelCheckBalanceCardViewId);
-        CardView ezypesa = findViewById(R.id.ezypesaCardViewId);
-        CardView uni = findViewById(R.id.zantelBundle1CardViewId);
-        CardView bundle1 = findViewById(R.id.zantelBundle2CardViewId);
+        CardView balance = findViewById(R.id.zantelBalanceCardView);
+        CardView ezypesa = findViewById(R.id.ezypesaCardView);
+        CardView bundle1 = findViewById(R.id.zantelBundle1CardView);
+        CardView uni = findViewById(R.id.zantelUniCardView);
 
-        ezypesa.setOnClickListener(new View.OnClickListener() {
+
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(ezyPesaMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+                switch (v.getId()) {
+                    case R.id.zantelBalanceCardView:
+                        Intent zantelBalanceIntent = new Intent(Intent.ACTION_CALL);
+                        zantelBalanceIntent.setData(Uri.parse(balanceMenu + rail));
+                        startActivity(zantelBalanceIntent);
+                        break;
+                    case R.id.ezypesaCardView:
+                        Intent ezypesaIntent = new Intent(Intent.ACTION_CALL);
+                        ezypesaIntent.setData(Uri.parse(ezyPesaMenu + rail));
+                        startActivity(ezypesaIntent);
+                        break;
+                    case R.id.zantelBundle1CardView:
+                        Intent zantelBundle1Intent = new Intent(Intent.ACTION_CALL);
+                        zantelBundle1Intent.setData(Uri.parse(zantelBundle1Menu + rail));
+                        startActivity(zantelBundle1Intent);
+                        break;
+                    case R.id.zantelUniCardView:
+                        Intent zantelUniIntent = new Intent(Intent.ACTION_CALL);
+                        zantelUniIntent.setData(Uri.parse(zantelUniMenu + rail));
+                        startActivity(zantelUniIntent);
+                        break;
+                    default:
+                        break;
+                }
+//                startActivity(dialerIntent);
 
-        balance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(balanceMenu + rail));
-                startActivity(dialerIntent);
             }
-        });
+        };
 
-        bundle1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(zantelBundle1Menu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+        balance.setOnClickListener(listener);
+        ezypesa.setOnClickListener(listener);
+        bundle1.setOnClickListener(listener);
+        uni.setOnClickListener(listener);
 
-        uni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dialerIntent = new Intent(Intent.ACTION_CALL);
-                dialerIntent.setData(Uri.parse(zantelUniMenu + rail));
-                startActivity(dialerIntent);
-            }
-        });
+
+
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {

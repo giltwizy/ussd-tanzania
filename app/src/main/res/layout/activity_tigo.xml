@@ -35,7 +35,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tigoCheckBalanceCardViewId"
+            android:id="@+id/tigoCheckBalanceCardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -77,7 +77,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tigoPesaCardViewId"
+            android:id="@+id/tigoPesaCardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -129,7 +129,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tigoBundle1CardViewId"
+            android:id="@+id/tigoBundle1CardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -184,7 +184,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tigoBundle2CardViewId"
+            android:id="@+id/tigoBundle2CardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
@@ -225,7 +225,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/tigoBundle3CardViewId"
+            android:id="@+id/tigoBundle3CardView"
             android:layout_width="0dp"
             android:clickable="true"
             app:cardCornerRadius="30dp"
