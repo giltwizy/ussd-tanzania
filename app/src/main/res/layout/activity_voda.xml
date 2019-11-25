@@ -109,6 +109,7 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/m_pesa"
                     android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -162,6 +163,7 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/bundle_1"
                     android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -216,6 +218,7 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/uni"
                     android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -255,6 +258,7 @@
                     android:layout_marginTop="5dp"
                     android:text="@string/bundle_2"
                     android:textSize="@dimen/text_size"
+                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
