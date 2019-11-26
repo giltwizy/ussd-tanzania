@@ -67,6 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/check_balance"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -107,6 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/recharge"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -158,6 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/tigo_pesa"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -197,6 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/malipo_ya_serikali"
                     android:textSize="@dimen/text_size"
                     android:textAllCaps="true"
@@ -249,6 +253,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/airtel_money"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
@@ -289,6 +294,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/halopesa"
                     android:textSize="@dimen/text_size"
                     android:textStyle="bold" />

@@ -57,6 +57,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="100dp"
+                android:fontFamily="@font/montserrat"
                 android:hint="@string/enter_your_voucher_pin"
                 android:textAllCaps="true"
                 android:textAlignment="center"
@@ -71,6 +72,7 @@
                 android:background="@color/colorPrimaryDark"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="10dp"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/recharge" />
 
 
