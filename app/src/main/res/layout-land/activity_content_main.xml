@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/back_overlay"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".networkCarriers.Voda">
+    tools:context=".MainActivity">
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -34,14 +34,12 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/vodaBalanceBundleCardView"
+            android:id="@+id/generalCheckBalanceCardView"
             android:layout_width="0dp"
-            android:clickable="true"
-            app:cardCornerRadius="30dp"
-            android:layout_margin="5dp"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:focusable="true">
+            app:cardCornerRadius="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,9 +48,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/icon_frame"
-                    android:layout_height="@dimen/icon_frame"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
                     android:background="@drawable/circlebackgroundblue"
+                    android:contentDescription="@string/check_balance_menu"
                     android:padding="10dp"
                     android:src="@drawable/ic_star_black_16dp" />
 
@@ -68,21 +67,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/salio_la_kifurushi"
+                    android:text="@string/check_balance"
                     android:textSize="@dimen/text_size"
-                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/mPesaCardView"
+            android:id="@+id/rechargeCardViewId"
             android:layout_width="0dp"
-            app:cardCornerRadius="30dp"
-            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,9 +89,62 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/icon_frame"
-                    android:layout_height="@dimen/icon_frame"
+                    android:layout_width="@dimen/image_resource_land"
+                    android:layout_height="@dimen/image_resource_land"
+                    android:background="@drawable/circlebackgroundblue"
+                    android:contentDescription="@string/recharge_menu"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_flare_black_16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/material_deep_purple"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/recharge"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/generalTigoPesaCardView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/image_resource_land"
+                    android:layout_height="@dimen/image_resource_land"
                     android:background="@drawable/circlebackgroundpurple"
+                    android:contentDescription="@string/tigo_pesa_menu"
                     android:padding="10dp"
                     android:src="@drawable/ic_monetization_on_black_16dp" />
 
@@ -109,9 +160,49 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/m_pesa"
+                    android:text="@string/tigo_pesa"
                     android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/generalSerikaliCardView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/image_resource_land"
+                    android:layout_height="@dimen/image_resource_land"
+                    android:contentDescription="@string/m_pesa_menu"
+                    android:padding="10dp"
+                    android:src="@drawable/tanzania_emblem" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/material_deep_purple"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/malipo_ya_serikali"
                     android:textAllCaps="true"
+                    android:textSize="@dimen/text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -129,71 +220,12 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/vodaBundle1CardView"
+            android:id="@+id/generalAirtelMoneyCardView"
             android:layout_width="0dp"
-            android:clickable="true"
-            app:cardCornerRadius="30dp"
-            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:focusable="true">
-
-            <LinearLayout
-                android:layout_width="184dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="@dimen/icon_frame"
-                    android:layout_height="@dimen/icon_frame"
-                    android:background="@drawable/circlebackgroundgreen"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_layers_black_16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="5dp"
-                    android:background="@color/material_deep_purple"
-                    android:padding="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/bundle_1"
-                    android:textSize="@dimen/text_size"
-                    android:textAllCaps="true"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/vodaUniMenuCardView"
-            android:layout_width="0dp"
-            android:clickable="true"
-            app:cardCornerRadius="30dp"
             android:layout_margin="5dp"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:focusable="true">
+            app:cardCornerRadius="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -202,11 +234,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/icon_frame"
-                    android:layout_height="@dimen/icon_frame"
-                    android:background="@drawable/circlebackgroundgreen"
+                    android:layout_width="@dimen/image_resource_land"
+                    android:layout_height="@dimen/image_resource_land"
+                    android:background="@drawable/circlebackgroundpurple"
+                    android:contentDescription="@string/airtel_money_menu"
                     android:padding="10dp"
-                    android:src="@drawable/ic_school_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -220,21 +253,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/uni"
+                    android:text="@string/airtel_money"
                     android:textSize="@dimen/text_size"
-                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/vodaBundle2CardView"
+            android:id="@+id/generalHaloPesaCardView"
             android:layout_width="0dp"
-            app:cardCornerRadius="30dp"
-            android:layout_margin="5dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -243,11 +275,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/icon_frame"
-                    android:layout_height="@dimen/icon_frame"
-                    android:background="@drawable/circlebackgroundgreen"
+                    android:layout_width="@dimen/image_resource_land"
+                    android:layout_height="@dimen/image_resource_land"
+                    android:background="@drawable/circlebackgroundpurple"
+                    android:contentDescription="@string/halo_pesa_menu"
                     android:padding="10dp"
-                    android:src="@drawable/ic_layers_black_16dp" />
+                    android:src="@drawable/ic_monetization_on_black_16dp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -261,9 +294,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/bundle_2"
+                    android:text="@string/halopesa"
                     android:textSize="@dimen/text_size"
-                    android:textAllCaps="true"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -271,7 +303,5 @@
 
 
     </LinearLayout>
-
-
 
 </LinearLayout>
