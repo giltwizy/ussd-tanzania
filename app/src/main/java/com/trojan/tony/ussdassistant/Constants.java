@@ -33,9 +33,10 @@ public class Constants {
     public static final String vodaUniMenu = "tel:*149*42";
 
     //Halotel
+    public static final String halotelBundleBalance = "tel:*102*01";
     public static final String haloPesaMenu = "tel:*150*88";
     public static final String halotelBundle1Menu = "tel:*148*66";
-    public static final String halotelUniMenu = "tel:*149*55";
+//    public static final String halotelUniMenu = "tel:*149*55";
 
 
     //TTCL
