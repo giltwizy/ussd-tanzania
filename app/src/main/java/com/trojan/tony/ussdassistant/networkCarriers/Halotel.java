@@ -17,11 +17,11 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.trojan.tony.ussdassistant.R;
 
-import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
+//import static com.trojan.tony.ussdassistant.Constants.balanceMenu;
 import static com.trojan.tony.ussdassistant.Constants.haloPesaMenu;
 import static com.trojan.tony.ussdassistant.Constants.halotelBundle1Menu;
 import static com.trojan.tony.ussdassistant.Constants.halotelBundleBalance;
-import static com.trojan.tony.ussdassistant.Constants.halotelUniMenu;
+//import static com.trojan.tony.ussdassistant.Constants.halotelUniMenu;
 import static com.trojan.tony.ussdassistant.Constants.rail;
 
 public class Halotel extends AppCompatActivity {
@@ -37,7 +37,7 @@ public class Halotel extends AppCompatActivity {
 
         CardView balance = findViewById(R.id.halotelBundleBalanceCardViewId);
         CardView halopesa = findViewById(R.id.halopesaCardViewId);
-        CardView uni = findViewById(R.id.halotelBundle1CardViewId);
+//        CardView uni = findViewById(R.id.halotelBundle1CardViewId);
         CardView bundle1 = findViewById(R.id.halotelBundle2CardViewId);
 
         halopesa.setOnClickListener(new View.OnClickListener() {
